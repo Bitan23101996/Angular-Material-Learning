@@ -1,0 +1,45 @@
+<!--Normal Button-->
+<div>
+  <button mat-button>Click Me!</button>
+  <button mat-raised-button>Click Me!</button>
+  <button mat-stroked-button>Click Me!</button>
+  <button mat-flat-button>Click Me!</button>
+</div>
+
+<div>
+  <button mat-icon-button>Click Me!</button>
+  <button mat-fab>Click Me!</button>
+  <button mat-mini-fab>Click Me!</button>
+</div>
+
+<div>
+  <button color="primary" mat-button>Primary!</button>
+  <button color="primary" mat-raised-button>Primary!</button>
+  <button color="warn" mat-raised-button>warn!</button>
+  <button color="accent" mat-raised-button>Accent!</button>
+  <button isRoundButton color="primary" mat-stroked-button>stroked!</button>
+  <button disableRipple mat-stroked-button>Accent!</button>
+</div>
+
+<!--Toggle button-->
+<div>
+  <mat-button-toggle #toggleBtn checked disableRipple disabled
+    >Toggle</mat-button-toggle
+  >
+  <span>{{ toggleBtn.checked }}</span>
+</div>
+<!--Multiple toggle button-->
+<div>
+  <mat-button-toggle-group #toggleBtnGrp="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular" checked>Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div>Selected value: {{ toggleBtnGrp.value }}</div>
+</div>
+
+
+<!--Material Icons-->
+<div>
+    <mat-icon color="primary">fingerprint</mat-icon>
+</div>

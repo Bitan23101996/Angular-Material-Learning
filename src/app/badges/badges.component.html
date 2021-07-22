@@ -1,0 +1,31 @@
+<div class="m-1">
+  <p>
+    <span matBadge="4" matBadgePosition="before" matBadgeOverlap="false"
+      >Text with a badge</span
+    >
+  </p>
+
+  <p>
+    <button
+      mat-raised-button
+      color="primary"
+      matBadge="8"
+      matBadgeColor="accent"
+      matBadgeOverlap="true"
+    >
+      Action
+    </button>
+  </p>
+
+  <div>
+    <mat-icon
+      matBadgePosition="after"
+      matBadgeSize="medium"
+      [matBadgeHidden]="notiCount == 0"
+      [matBadge]="notiCount"
+      color="primary"
+      matBadgeColor="warn"
+      >notifications</mat-icon
+    >
+  </div>
+</div>
