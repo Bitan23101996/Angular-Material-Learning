@@ -1,0 +1,11 @@
+<mat-sidenav-container>
+  <mat-sidenav (opened)="log('open')" (closed)="log('close')" #sidebar opened mode="side" [(opened)]="sidebarOpen">Sidebar</mat-sidenav>
+  <mat-sidenav-content
+    >Main Content
+
+    <button (click)="sidebarOpen = !sidebarOpen" mat-raised-button>Toggle To Open</button>
+    <button (click)="sidebar.open()" color="primary" mat-raised-button>Open</button>
+    <button (click)="sidebar.close()" color="warn" mat-raised-button>Close</button>
+    <button (click)="sidebar.toggle()" color="accent" mat-raised-button>Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

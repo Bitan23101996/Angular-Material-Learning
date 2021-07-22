@@ -1,0 +1,51 @@
+<div style="margin: 100px">
+  <button
+    mat-button
+    [matMenuTriggerFor]="menu"
+    xPosition="before"
+    yPosition="above"
+  >
+    Menu
+  </button>
+  <mat-menu #menu="matMenu" overlapTrigger="false">
+    <button mat-menu-item [matMenuTriggerFor]="submenu">Frontend</button>
+    <button mat-menu-item>Backend</button>
+  </mat-menu>
+
+  <mat-menu #submenu="matMenu">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>React</button>
+    <button mat-menu-item disabled>Vue</button>
+  </mat-menu>
+  <!---------Example of lazy menu---------------->
+  <div>
+    <button
+      type="button"
+      [matMenuTriggerData]="{ code: 1, channel: 'Sports' }"
+      mat-raised-button
+      [matMenuTriggerFor]="lazyMenu"
+    >
+      Channel 1
+    </button>
+    <button
+      type="button"
+      [matMenuTriggerData]="{ code: 2, channel: 'Dance & Play' }"
+      mat-raised-button
+      [matMenuTriggerFor]="lazyMenu"
+    >
+      Channel 2
+    </button>
+  </div>
+
+  <mat-menu #lazyMenu="matMenu">
+    <ng-template matMenuContent let-channelCode="code" let-channelFor="channel">
+      <button type="button" mat-menu-item>Settings</button>
+      <button type="button" mat-menu-item>
+        This is channel based on {{ channelFor }}
+      </button>
+      <button type="button" mat-menu-item>
+        Logout from Channel {{ channelCode }}
+      </button>
+    </ng-template>
+  </mat-menu>
+</div>
