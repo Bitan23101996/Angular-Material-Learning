@@ -15,6 +15,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListsComponent } from './lists/lists.component';
+import { GridListComponent } from './grid-list/grid-list.component';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ListsComponent } from './lists/lists.component';
     ToolbarComponent,
     SidebarComponent,
     MenuComponent,
-    ListsComponent
+    ListsComponent,
+    GridListComponent,
+    ExpansionPanelComponent
   ],
   imports: [
     BrowserModule,

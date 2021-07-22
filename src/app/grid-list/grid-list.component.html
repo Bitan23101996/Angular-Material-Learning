@@ -1,0 +1,12 @@
+<mat-grid-list cols="4" rowHeight="fit" style="height: 100vh" gutterSize="5px">
+  <mat-grid-tile
+    *ngFor="let list of gridList; let i = index"
+    [rowspan]="list.rows"
+    [colspan]="list.cols"
+    [style.background]="list.color"
+  >
+    {{ list.text }}
+    <mat-grid-tile-header> Header {{ i + 1 }}</mat-grid-tile-header>
+    <mat-grid-tile-footer>Footer {{ i + 1 }}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,37 @@
+<mat-accordion class="example-headers-align" multi="true">
+  <mat-expansion-panel
+    *ngFor="let course of courseList; let i = index"
+    [expanded]="step === i"
+    (opened)="setStep(i)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ course.title }}</mat-panel-title>
+
+      <mat-panel-description>
+        Duration:{{ course.duration }} hrs.
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ course.details }}</p>
+    <mat-action-row>
+      <button mat-raised-button type="button" color="accent">Enroll</button>
+      <button
+        mat-raised-button
+        type="button"
+        color="warn"
+        (click)="prevStep()"
+        *ngIf="step != 0"
+      >
+        Previous
+      </button>
+      <button
+      *ngIf="step != courseList.length - 1"
+        mat-raised-button
+        type="button"
+        color="primary"
+        (click)="nextStep()"
+      >
+        Next
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
