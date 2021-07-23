@@ -1,0 +1,68 @@
+<mat-tab-group
+  #selectedTabs
+  animationDuration="250ms"
+  (selectedTabChange)="logSelectedEvent(selectedTabs.selectedIndex)"
+>
+  <mat-tab *ngFor="let content of contentList"
+    ><!-- label={{content.title}}-->
+    <ng-template mat-tab-label>
+      <mat-icon [color]="content.color">thumb_up</mat-icon>
+      {{ content.title }}
+    </ng-template>
+    {{ content.desc }}</mat-tab
+  >
+</mat-tab-group>
+{{ selectedTabs.selectedIndex }}
+
+<mat-tab-group dynamicHeight headerPosition="below">
+  <mat-tab label="Short tab">
+    <div class="example-small-box mat-elevation-z4">
+      <ng-template matTabContent>
+        Content 1 - Loaded: {{ getTimeLoaded(0) | date: "medium" }}
+      </ng-template>
+    </div>
+  </mat-tab>
+  <mat-tab label="Long tab">
+    <div class="example-large-box mat-elevation-z4">
+      <ng-template matTabContent>
+        Content 2 - Loaded: {{ getTimeLoaded(1) | date: "medium" }}
+      </ng-template>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+<!------------------3 rd--------------->
+<mat-button-toggle-group
+  #colorToggle="matButtonToggleGroup"
+  value="primary"
+  aria-label="Change color"
+>
+  <mat-button-toggle value="primary"> Primary </mat-button-toggle>
+  <mat-button-toggle value="accent"> Accent </mat-button-toggle>
+  <mat-button-toggle value="warn"> Warn </mat-button-toggle>
+</mat-button-toggle-group>
+<br />
+<mat-button-toggle-group
+  #backgroundColorToggle="matButtonToggleGroup"
+  value="primary"
+  aria-label="Change color"
+>
+  <mat-button-toggle value="primary"> Primary </mat-button-toggle>
+  <mat-button-toggle value="accent"> Accent </mat-button-toggle>
+  <mat-button-toggle value="warn">Warn</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-tab-group
+  [backgroundColor]="backgroundColorToggle.value"
+  [color]="colorToggle.value"
+>
+  <mat-tab label="Primary">
+    <div class="example-small-box mat-elevation-z4">
+      <ng-template matTabContent> Content 1 - Primary </ng-template>
+    </div>
+  </mat-tab>
+  <mat-tab label="Accent">
+    <div class="example-large-box mat-elevation-z4">
+      <ng-template matTabContent> Content 2 - Accent </ng-template>
+    </div>
+  </mat-tab>
+</mat-tab-group>
